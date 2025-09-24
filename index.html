@@ -1,0 +1,184 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Awesome Site</title>
+  <meta name="description" content="A clean, responsive one-file website starter you can edit in Acode." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent1:#7c3aed; --accent2:#06b6d4; --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.04);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071025 0%, #081426 50%, #02111b 100%);color:#e6eef8}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1000px;margin:28px auto;padding:20px}/* Header */
+header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800}
+.logo span{font-size:18px}
+nav{display:flex;gap:12px;align-items:center}
+nav a{padding:8px 12px;border-radius:8px;font-weight:600;color:var(--muted)}
+nav a.primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center;margin-top:28px}
+.hero .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:28px;border-radius:16px;box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+h1{margin:0 0 8px;font-size:28px;line-height:1.05}
+p.lead{margin:0;color:var(--muted)}
+
+/* Buttons */
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#cfe9ff}
+.btn-accent{background:linear-gradient(90deg,var(--accent1),var(--accent2));box-shadow:0 6px 18px rgba(124,58,237,0.15);color:white}
+
+/* Feature grid */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.feature{background:var(--glass);padding:16px;border-radius:12px}
+.feature h3{margin:6px 0 0;font-size:16px}
+.feature p{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+/* Right card (preview) */
+.preview{background:linear-gradient(180deg,#021022,#041428);padding:18px;border-radius:12px;height:100%}
+.preview .screen{height:260px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.tile{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:18px;border-radius:10px}
+
+/* Footer */
+footer{margin-top:30px;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);display:flex;justify-content:space-between;align-items:center}
+
+/* Responsive */
+@media (max-width:880px){
+  .hero{grid-template-columns:1fr}
+  .features{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .container{padding:12px}
+}
+@media (max-width:520px){
+  .features{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+  nav{display:none}
+  h1{font-size:22px}
+  .logo{width:40px;height:40px}
+}
+
+/* small animations */
+.fade-in{animation:fadeIn .8s ease both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo"><span>YS</span></div>
+        <div>
+          <div style="font-weight:800">YourSite</div>
+          <div style="font-size:12px;color:var(--muted)">Made with Acode · Mobile friendly</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact" class="primary">Contact</a>
+      </nav>
+    </header><section class="hero">
+  <div class="card fade-in">
+    <h1>Create something beautiful — start small, grow later</h1>
+    <p class="lead">A clean, responsive starter website you can edit on your phone (Acode). Use this as your homepage, portfolio, or small business landing page.</p>
+
+    <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn btn-accent" id="demoOpen">Live Demo</a>
+      <a class="btn btn-ghost" id="downloadBtn">Download HTML</a>
+    </div>
+
+    <div class="features" id="features">
+      <div class="feature">
+        <strong>Mobile first</strong>
+        <h3>Works great on phones</h3>
+        <p>Designed to look good on small screens — perfect for Acode editing.</p>
+      </div>
+      <div class="feature">
+        <strong>Easy to edit</strong>
+        <h3>Single-file</h3>
+        <p>One index.html — change text, colors, images and you're done.</p>
+      </div>
+      <div class="feature">
+        <strong>Deploy fast</strong>
+        <h3>Netlify / Vercel</h3>
+        <p>Upload and get a public link instantly — zero backend required.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <aside class="preview">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <div style="font-weight:700">Preview</div>
+      <div style="font-size:12px;color:var(--muted)">example: yoursite.netlify.app</div>
+    </div>
+    <div class="screen" id="miniScreen">
+      <div style="text-align:center">
+        <h2 style="margin:0">Hello!</h2>
+        <p style="margin:6px 0 0;color:var(--muted)">This is how your homepage would look on a phone.</p>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:8px;margin-top:12px">
+      <div style="flex:1;background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;text-align:center">Visitors: <strong id="visCount">1</strong></div>
+      <div style="width:120px;background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;text-align:center">Status: <span style="color:#9fffd4">Live</span></div>
+    </div>
+  </aside>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="tile">
+    <h3>Simple blog</h3>
+    <p style="color:var(--muted)">Show posts and updates using simple cards.</p>
+  </div>
+  <div class="tile">
+    <h3>Portfolio</h3>
+    <p style="color:var(--muted)">Display work with images and short descriptions.</p>
+  </div>
+  <div class="tile">
+    <h3>Contact</h3>
+    <p style="color:var(--muted)">Add a form (Netlify Forms or email link) to receive messages.</p>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <strong>YourSite</strong>
+    <div style="font-size:13px;color:var(--muted)">Free starter · Edit in Acode · Deploy on Netlify</div>
+  </div>
+  <div style="font-size:13px;color:var(--muted)">Made with ❤️ — Edit and publish!</div>
+</footer>
+
+  </div>  <script>
+    // Small interactive bits you can expand
+    document.getElementById('demoOpen').addEventListener('click', ()=>{
+      // demo opens the mini-screen as a popup-like page
+      const w = window.open('', '_blank');
+      const html = `<!doctype html><html><head><meta name=viewport content='width=device-width,initial-scale=1'><title>Demo</title></head><body style='font-family:Inter,sans-serif;padding:24px;background:#071026;color:#e6eef8'><h1>YourSite Demo</h1><p>Use this page as your simple public homepage.</p></body></html>`;
+      w.document.write(html); w.document.close();
+    });
+
+    document.getElementById('downloadBtn').addEventListener('click', ()=>{
+      const blob = new Blob([document.documentElement.outerHTML], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'index.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    // small visitor counter simulation (for demo only)
+    let count = 1;
+    setInterval(()=>{count++; document.getElementById('visCount').textContent = count}, 2500);
+
+  </script></body>
+</html>
