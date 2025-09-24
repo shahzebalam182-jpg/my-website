@@ -1,191 +1,280 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Your Awesome Site</title>
-  <meta name="description" content="A clean, responsive one-file website starter you can edit in Acode." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0f1724; --card:#0b1220; --accent1:#7c3aed; --accent2:#06b6d4; --muted:#94a3b8;
-      --glass: rgba(255,255,255,0.04);
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071025 0%, #081426 50%, #02111b 100%);color:#e6eef8}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1000px;margin:28px auto;padding:20px}/* Header */
-header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800}
-.logo span{font-size:18px}
-nav{display:flex;gap:12px;align-items:center}
-nav a{padding:8px 12px;border-radius:8px;font-weight:600;color:var(--muted)}
-nav a.primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white}
-
-/* Hero */
-.hero{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center;margin-top:28px}
-.hero .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:28px;border-radius:16px;box-shadow:0 6px 30px rgba(2,6,23,0.6)}
-h1{margin:0 0 8px;font-size:28px;line-height:1.05}
-p.lead{margin:0;color:var(--muted)}
-
-/* Buttons */
-.btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
-.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#cfe9ff}
-.btn-accent{background:linear-gradient(90deg,var(--accent1),var(--accent2));box-shadow:0 6px 18px rgba(124,58,237,0.15);color:white}
-
-/* Feature grid */
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
-.feature{background:var(--glass);padding:16px;border-radius:12px}
-.feature h3{margin:6px 0 0;font-size:16px}
-.feature p{margin:6px 0 0;color:var(--muted);font-size:14px}
-
-<section>
-    <h2>About Me</h2>
-    <p>Hii I’m shahzeb I’m a web developer who loves creating websites that look great and work smoothly. I’m learning HTML , CSS and Java script to build cooo project , like my own portfolio. Coding excites me beacuse it let’s me turn ideas into reality. In my free time I explore new tech and dream of building apps that helps people</p>
-</section>
-    /* Right card (preview) */
-.preview{background:linear-gradient(180deg,#021022,#041428);padding:18px;border-radius:12px;height:100%}
-.preview .screen{height:260px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
-
-/* Gallery */
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
-.tile{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:18px;border-radius:10px}
-
-/* Footer */
-footer{margin-top:30px;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);display:flex;justify-content:space-between;align-items:center}
-
-/* Responsive */
-@media (max-width:880px){
-  .hero{grid-template-columns:1fr}
-  .features{grid-template-columns:repeat(2,1fr)}
-  .gallery{grid-template-columns:repeat(2,1fr)}
-  .container{padding:12px}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medicine Mart</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ================= Base Styles ================= */
+* {margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif;}
+body {background:#f7f9fc; color:#333; scroll-behavior:smooth;}
+a {text-decoration:none; color:inherit;}
+/* ================= Navbar ================= */
+nav {
+  position: sticky; top:0; z-index:100; background:#4CAF50; padding:15px 0;
+  text-align:center; box-shadow:0 4px 8px rgba(0,0,0,0.15);
 }
-@media (max-width:520px){
-  .features{grid-template-columns:1fr}
-  .gallery{grid-template-columns:1fr}
-  nav{display:none}
-  h1{font-size:22px}
-  .logo{width:40px;height:40px}
+nav a {margin:0 20px; font-weight:600; color:white; transition:0.3s; cursor:pointer;}
+nav a:hover {color:#ffd700;}
+/* ================= Hero Banner ================= */
+header {
+  text-align:center; padding:80px 20px;
+  background: linear-gradient(to right, #56ab2f, #a8e063);
+  color:white; position:relative;
 }
-
-/* small animations */
-.fade-in{animation:fadeIn .8s ease both}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-
-  </style>
+header h1 {font-size:3em; margin-bottom:15px; text-shadow:1px 1px 4px rgba(0,0,0,0.3);}
+header p {font-size:1.3em; max-width:600px; margin:0 auto 20px;}
+header button {
+  padding:12px 25px; font-size:1em; border:none; border-radius:10px;
+  background:#ffd700; color:#444; font-weight:600; cursor:pointer; transition:0.3s;
+}
+header button:hover {background:#ffec80;}
+/* ================= Sections ================= */
+section {display:none; padding:40px 20px;}
+section.active {display:block;}
+.category-title {text-align:center; font-size:1.6em; margin:40px 0 20px; font-weight:600; color:#444;}
+/* ================= Search Bar ================= */
+#search-bar {text-align:center; margin-bottom:30px;}
+#search-bar input {
+  width:80%; max-width:400px; padding:10px 15px; border-radius:8px; border:1px solid #ccc; font-size:1em;
+}
+/* ================= Category Filters ================= */
+#filters {text-align:center; margin-bottom:30px;}
+#filters button {
+  padding:8px 15px; margin:5px; border:none; border-radius:8px; background:#56ab2f; color:white; cursor:pointer; transition:0.3s;
+}
+#filters button:hover {background:#4CAF50;}
+/* ================= Products ================= */
+.products {display:flex; flex-wrap:wrap; justify-content:center;}
+.product-card {
+  background:white; width:220px; margin:15px; padding:15px; border-radius:15px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s, box-shadow 0.3s; position:relative;
+}
+.product-card:hover {transform: translateY(-8px); box-shadow:0 12px 25px rgba(0,0,0,0.2);}
+.product-card img {width:150px; height:150px; object-fit:cover; border-radius:10px; margin-bottom:10px;}
+.product-card h3 {font-size:1.1em; margin-bottom:5px;}
+.product-card p {font-size:0.9em; margin-bottom:10px; height:45px; overflow:hidden;}
+.product-card .price {font-weight:600; color:#4CAF50; margin-bottom:8px;}
+.product-card button {padding:8px 12px; border:none; border-radius:10px; background: linear-gradient(90deg,#4CAF50,#56ab2f); color:white; cursor:pointer; transition:0.3s;}
+.product-card button:hover {background: linear-gradient(90deg,#45a049,#4CAF50);}
+.product-badge {
+  position:absolute; top:10px; left:10px; background:#ffd700; color:#444;
+  font-size:0.8em; padding:3px 6px; border-radius:5px; font-weight:600;
+}
+/* ================= Ratings ================= */
+.stars {color:#FFD700; margin-bottom:8px; font-size:0.9em;}
+.review {font-size:0.8em; color:#555; margin-bottom:10px; height:35px; overflow:hidden;}
+/* ================= Forms ================= */
+form input, form textarea, form button {width:100%; margin:8px 0 15px; padding:10px; border-radius:8px; border:1px solid #ccc;}
+form button {background:linear-gradient(90deg,#4CAF50,#56ab2f); color:white; font-weight:600; cursor:pointer;}
+form button:hover {background:linear-gradient(90deg,#45a049,#4CAF50);}
+/* ================= Cart ================= */
+.cart-items ul {list-style:none; padding:0;}
+.cart-items li {margin-bottom:12px; display:flex; justify-content:space-between; align-items:center;}
+.cart-items button {padding:5px 8px; font-size:0.9em; border-radius:6px; cursor:pointer;}
+/* ================= Popup ================= */
+#popup {
+  position: fixed; bottom:30px; right:30px;
+  background:#4CAF50; color:white; padding:15px 20px; border-radius:10px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.3); display:none; font-weight:600; z-index:1000;
+}
+/* ================= Footer ================= */
+footer {text-align:center; padding:30px 20px; background:#4CAF50; color:white; margin-top:50px;}
+footer p {margin-bottom:5px;}
+footer a {color:white; margin:0 5px; transition:0.3s;}
+footer a:hover {color:#ffd700;}
+/* ================= Responsive ================= */
+@media screen and (max-width:600px){.products{flex-direction:column; align-items:center;}.product-card{width:90%;}}
+</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo"><span>YS</span></div>
-        <div>
-          <div style="font-weight:800">YourSite</div>
-          <div style="font-size:12px;color:var(--muted)">Made with Acode · Mobile friendly</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#features">Features</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact" class="primary">Contact</a>
-      </nav>
-    </header><section class="hero">
-  <div class="card fade-in">
-    <h1>Create something beautiful — start small, grow later</h1>
-    <p class="lead">A clean, responsive starter website you can edit on your phone (Acode). Use this as your homepage, portfolio, or small business landing page.</p>
 
-    <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
-      <a class="btn btn-accent" id="demoOpen">Live Demo</a>
-      <a class="btn btn-ghost" id="downloadBtn">Download HTML</a>
-    </div>
+<!-- ================= Navbar ================= -->
+<nav>
+<a onclick="showSection('home')">Home</a>
+<a onclick="showSection('cart')">Cart (<span id="cart-count">0</span>)</a>
+<a onclick="showSection('checkout')">Checkout</a>
+<a onclick="showSection('about')">About</a>
+<a onclick="showSection('contact')">Contact</a>
+</nav>
 
-    <div class="features" id="features">
-      <div class="feature">
-        <strong>Mobile first</strong>
-        <h3>Works great on phones</h3>
-        <p>Designed to look good on small screens — perfect for Acode editing.</p>
-      </div>
-      <div class="feature">
-        <strong>Easy to edit</strong>
-        <h3>Single-file</h3>
-        <p>One index.html — change text, colors, images and you're done.</p>
-      </div>
-      <div class="feature">
-        <strong>Deploy fast</strong>
-        <h3>Netlify / Vercel</h3>
-        <p>Upload and get a public link instantly — zero backend required.</p>
-      </div>
-    </div>
+<!-- ================= Home Section ================= -->
+<section id="home" class="active">
+<header>
+<h1>Welcome to Medicine Mart</h1>
+<p>Your trusted online store for health & wellness products. Explore, add to cart, and stay healthy!</p>
+<button onclick="document.getElementById('search-bar-input').focus()">Search Products</button>
+</header>
 
-  </div>
+<!-- ================= Search Bar ================= -->
+<div id="search-bar">
+<input type="text" id="search-bar-input" placeholder="Search for medicines..." onkeyup="searchProducts()">
+</div>
 
-  <aside class="preview">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-      <div style="font-weight:700">Preview</div>
-      <div style="font-size:12px;color:var(--muted)">example: yoursite.netlify.app</div>
-    </div>
-    <div class="screen" id="miniScreen">
-      <div style="text-align:center">
-        <h2 style="margin:0">Hello!</h2>
-        <p style="margin:6px 0 0;color:var(--muted)">This is how your homepage would look on a phone.</p>
-      </div>
-    </div>
+<!-- ================= Category Filters ================= -->
+<div id="filters">
+<button onclick="filterCategory('All')">All</button>
+<button onclick="filterCategory('Pain Relief')">Pain Relief</button>
+<button onclick="filterCategory('Vitamins')">Vitamins & Supplements</button>
+<button onclick="filterCategory('Cold & Flu')">Cold, Flu & Allergy</button>
+<button onclick="filterCategory('Skin')">Skin Care & Health</button>
+<button onclick="filterCategory('Wellness')">Daily Health & Wellness</button>
+</div>
 
-    <div style="display:flex;gap:8px;margin-top:12px">
-      <div style="flex:1;background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;text-align:center">Visitors: <strong id="visCount">1</strong></div>
-      <div style="width:120px;background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;text-align:center">Status: <span style="color:#9fffd4">Live</span></div>
-    </div>
-  </aside>
+<div class="products" id="products-container"></div>
 </section>
 
-<section class="gallery" id="gallery">
-  <div class="tile">
-    <h3>Simple blog</h3>
-    <p style="color:var(--muted)">Show posts and updates using simple cards.</p>
-  </div>
-  <div class="tile">
-    <h3>Portfolio</h3>
-    <p style="color:var(--muted)">Display work with images and short descriptions.</p>
-  </div>
-  <div class="tile">
-    <h3>Contact</h3>
-    <p style="color:var(--muted)">Add a form (Netlify Forms or email link) to receive messages.</p>
-  </div>
+<!-- ================= Cart Section ================= -->
+<section id="cart">
+<header><h1>Your Cart</h1></header>
+<div class="cart-items"><ul id="cart-list"></ul></div>
 </section>
 
+<!-- ================= Checkout Section ================= -->
+<section id="checkout">
+<header><h1>Checkout</h1></header>
+<form id="checkout-form">
+<label>Name:</label><input type="text" required>
+<label>Email:</label><input type="email" required>
+<label>Phone:</label><input type="text" required>
+<label>Address:</label><textarea required></textarea>
+<button type="submit">Place Order</button>
+</form>
+</section>
+
+<!-- ================= About Section ================= -->
+<section id="about">
+<header><h1>About Medicine Mart</h1></header>
+<p>Medicine Mart is your trusted online pharmacy. We provide a wide range of medicines, vitamins, supplements, and healthcare products to support your well-being.</p>
+</section>
+
+<!-- ================= Contact Section ================= -->
+<section id="contact">
+<header><h1>Contact Us</h1></header>
+<form id="contact-form">
+<label>Name:</label><input type="text" required>
+<label>Email:</label><input type="email" required>
+<label>Message:</label><textarea required></textarea>
+<button type="submit">Send Message</button>
+</form>
+</section>
+
+<!-- ================= Popup ================= -->
+<div id="popup"></div>
+
+<!-- ================= Footer ================= -->
 <footer>
-  <div>
-    <strong>YourSite</strong>
-    <div style="font-size:13px;color:var(--muted)">Free starter · Edit in Acode · Deploy on Netlify</div>
-  </div>
-  <div style="font-size:13px;color:var(--muted)">Made with ❤️ — Edit and publish!</div>
+<p>&copy; 2025 Medicine Mart | Made by Shahzeb Alam</p>
+<p>Follow us: 
+<a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+</p>
 </footer>
-    <section>
-    <h2>About Me</h2>
-    <p>Hi, I’m Shahzeb! I’m a web developer who loves creating websites that look great and work smoothly. I’m learning HTML, CSS, and JavaScript to build cool projects, like my own portfolio. Coding excites me because it lets me turn ideas into reality. In my free time, I explore new tech and dream of building apps that help people.</p>
-    </section>
- </div>  <script>
-    // Small interactive bits you can expand
-    document.getElementById('demoOpen').addEventListener('click', ()=>{
-      // demo opens the mini-screen as a popup-like page
-      const w = window.open('', '_blank');
-      const html = `<!doctype html><html><head><meta name=viewport content='width=device-width,initial-scale=1'><title>Demo</title></head><body style='font-family:Inter,sans-serif;padding:24px;background:#071026;color:#e6eef8'><h1>YourSite Demo</h1><p>Use this page as your simple public homepage.</p></body></html>`;
-      w.document.write(html); w.document.close();
+
+<!-- ================= JS ================= -->
+<script>
+// ======= Product Data =======
+const products=[
+  {name:"Paracetol", category:"Pain Relief", desc:"Painkiller – Relieves mild to moderate pain and reduces fever.", price:"₹50", badge:"New", rating:4.5, review:"Fast relief!"},
+  {name:"Ibuprofine", category:"Pain Relief", desc:"Anti-inflammatory – Helps reduce inflammation, pain, and fever.", price:"₹80", badge:"Best Seller", rating:4.2, review:"Works well for headaches."},
+  {name:"FastRelief Gel", category:"Pain Relief", desc:"Topical Pain Relief – Soothes sore muscles and joint pain quickly.", price:"₹120", badge:"Discount", rating:4.7, review:"Very effective!"},
+  {name:"HeadEase Tablets", category:"Pain Relief", desc:"Headache Relief – Fast-acting tablets for headaches and migraines.", price:"₹90", badge:"New", rating:4.3, review:"Good for migraines."},
+  {name:"VitaBoost", category:"Vitamins", desc:"Multivitamins – Supports overall health and immunity.", price:"₹200", badge:"Best Seller", rating:4.6, review:"Boosted my energy."},
+  {name:"OmegaCare", category:"Vitamins", desc:"Omega-3 Capsules – Improves heart, brain, and eye health.", price:"₹250", badge:"New", rating:4.5, review:"Great supplement."},
+  {name:"ImmunoPlus", category:"Vitamins", desc:"Vitamin C & Zinc – Strengthens immune system.", price:"₹180", badge:"Discount", rating:4.4, review:"Feeling healthier."},
+  {name:"BoneStrong", category:"Vitamins", desc:"Calcium & Vitamin D – Supports bone and joint health.", price:"₹220", badge:"New", rating:4.3, review:"Good for bones."},
+  {name:"CoughAway Syrup", category:"Cold & Flu", desc:"Cough Relief – Soothes coughs and throat irritation.", price:"₹130", badge:"Best Seller", rating:4.5, review:"Works fast!"},
+  {name:"NasalClear Spray", category:"Cold & Flu", desc:"Nasal Decongestant – Clears blocked nose and sinuses.", price:"₹140", badge:"New", rating:4.2, review:"Easy to use."},
+  {name:"AllerFree Tablets", category:"Cold & Flu", desc:"Allergy Relief – Helps relieve mild allergy symptoms.", price:"₹120", badge:"Discount", rating:4.3, review:"Effective for allergies."},
+  {name:"FeverCheck Tablets", category:"Cold & Flu", desc:"Reduces Fever – Fast-acting fever reducer.", price:"₹100", badge:"New", rating:4.4, review:"Quick action."},
+  {name:"SkinGlow Cream", category:"Skin", desc:"Moisturizer – Hydrates and nourishes skin.", price:"₹300", badge:"Best Seller", rating:4.6, review:"Skin feels soft."},
+  {name:"AntiItch Lotion", category:"Skin", desc:"Itch Relief – Reduces itching and skin irritation.", price:"₹180", badge:"New", rating:4.2, review:"Stops itching fast."},
+  {name:"HealFast Ointment", category:"Skin", desc:"Wound Healing – Helps minor cuts and burns heal faster.", price:"₹220", badge:"Discount", rating:4.5, review:"Healing is quick."},
+  {name:"SunProtect SPF 50", category:"Skin", desc:"Sunscreen – Protects skin from harmful UV rays.", price:"₹350", badge:"New", rating:4.7, review:"No sunburn!"},
+  {name:"DigestEase Capsules", category:"Wellness", desc:"Digestion Support – Helps improve digestion and reduces bloating.", price:"₹150", badge:"New", rating:4.4, review:"Improved digestion."},
+  {name:"SleepWell Tablets", category:"Wellness", desc:"Sleep Aid – Promotes better sleep and relaxation.", price:"₹200", badge:"Best Seller", rating:4.3, review:"Sleep improved."},
+  {name:"JointFlex", category:"Wellness", desc:"Joint Support – Supports joint flexibility and reduces stiffness.", price:"₹250", badge:"Discount", rating:4.5, review:"Feels better."},
+  {name:"HeartGuard", category:"Wellness", desc:"Heart Health – Supports cardiovascular function.", price:"₹300", badge:"New", rating:4.6, review:"Heart feels healthy."},
+];
+// ======= Display Products =======
+function displayProducts(list){
+  const container=document.getElementById('products-container'); container.innerHTML='';
+  list.forEach(p=>{
+    const card=document.createElement('div'); card.className='product-card';
+    card.innerHTML=`
+      ${p.badge?`<div class="product-badge">${p.badge}</div>`:''}
+      <img src="https://via.placeholder.com/150" alt="${p.name}">
+      <h3>${p.name}</h3>
+      <p>${p.desc}</p>
+      <div class="price">${p.price}</div>
+      <div class="stars">${'★'.repeat(Math.floor(p.rating))}${p.rating%1>=0.5?'½':''}</div>
+      <div class="review">${p.review}</div>
+      <input type="number" min="1" value="1" id="qty-${p.name.replace(/\s+/g,'')}" style="width:50px; margin-bottom:5px;">
+      <button onclick="addToCart('${p.name}')">Add to Cart</button>
+    `;
+    container.appendChild(card);
+  });
+}
+displayProducts(products);
+
+// ======= Search & Filter =======
+function searchProducts(){
+  const term=document.getElementById('search-bar-input').value.toLowerCase();
+  const filtered=products.filter(p=>p.name.toLowerCase().includes(term));
+  displayProducts(filtered);
+}
+function filterCategory(cat){
+  if(cat==='All'){displayProducts(products); return;}
+  const filtered=products.filter(p=>p.category.includes(cat));
+  displayProducts(filtered);
+}
+
+// ======= Cart =======
+let cart=JSON.parse(localStorage.getItem('cart'))||[];
+function showSection(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  updateCartDisplay();
+}
+function addToCart(productName){
+  const qty=parseInt(document.getElementById('qty-'+productName.replace(/\s+/g,'')).value);
+  cart.push({name:productName, qty});
+  localStorage.setItem('cart',JSON.stringify(cart));
+  updateCartDisplay();
+  showPopup(`${productName} (${qty}) added to cart!`);
+}
+function updateCartDisplay(){
+  document.getElementById('cart-count').innerText=cart.length;
+  const list=document.getElementById('cart-list'); list.innerHTML='';
+  if(cart.length===0){list.innerHTML='<li>Your cart is empty.</li>';}
+  else{
+    cart.forEach((item,index)=>{
+      const li=document.createElement('li');
+      li.innerHTML=`${item.name} x${item.qty} <button onclick="removeItem(${index})">Remove</button>`;
+      list.appendChild(li);
     });
+  }
+}
+function removeItem(index){cart.splice(index,1); localStorage.setItem('cart',JSON.stringify(cart)); updateCartDisplay();}
 
-    document.getElementById('downloadBtn').addEventListener('click', ()=>{
-      const blob = new Blob([document.documentElement.outerHTML], {type: 'text/html'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = 'index.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-    });
+// ======= Forms =======
+document.getElementById('checkout-form').addEventListener('submit',function(e){
+  e.preventDefault();
+  if(cart.length===0){alert("Cart is empty!"); return;}
+  alert("Thank you! Your order has been placed.");
+  cart=[]; localStorage.removeItem('cart'); updateCartDisplay(); this.reset();
+});
+document.getElementById('contact-form').addEventListener('submit',function(e){
+  e.preventDefault(); alert("Message sent! Thank you."); this.reset();
+});
 
-    // small visitor counter simulation (for demo only)
-    let count = 1;
-    setInterval(()=>{count++; document.getElementById('visCount').textContent = count}, 2500);
+// ======= Popup =======
+function showPopup(msg){
+  const popup=document.getElementById('popup'); popup.innerText=msg; popup.style.display='block';
+  setTimeout(()=>{popup.style.display='none';},2000);
+}
+updateCartDisplay();
+</script>
 
-  </script></body>
+</body>
 </html>
